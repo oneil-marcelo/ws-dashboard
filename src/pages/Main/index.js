@@ -1,7 +1,14 @@
 import React from 'react';
 
+import { Container, Content } from './styles';
+
 const Main = () => {
-  return <h1>Main</h1>;
+  return (
+    <Container>
+      <Content>Resumo</Content>
+      <Content>Resumo</Content>
+    </Container>
+  );
 };
 
 export default Main;
