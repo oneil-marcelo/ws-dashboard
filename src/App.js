@@ -1,12 +1,15 @@
 import React from 'react';
 
 import GlobalStyle from './components/GlobalStyle';
+import Header from './components/Header';
+import Menu from './components/Menu';
 
 function App() {
   return (
     <>
+      <Header />
+      <Menu />
       <GlobalStyle />
-      <h1>Hello World</h1>
     </>
   );
 }

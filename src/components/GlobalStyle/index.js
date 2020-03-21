@@ -12,8 +12,8 @@ export default createGlobalStyle`
  }
 
  body{
-   background:#fafafa;
    font: 14px 'Roboto', sans-serif;
+   background:#fafafa;
  }
 
  button {
@@ -24,6 +24,9 @@ export default createGlobalStyle`
  #root {
    width: 100%;
    height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-content: flex-start;
  }
 
 
