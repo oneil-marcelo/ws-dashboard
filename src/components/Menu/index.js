@@ -7,7 +7,7 @@ const Menu = () => {
   return (
     <MenuList>
       <MenuItem>
-        <MenuLink>
+        <MenuLink to="/pagina" alt="nome da página">
           <MdSearch size={25} />
         </MenuLink>
       </MenuItem>

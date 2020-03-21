@@ -19,11 +19,18 @@ export const MenuList = styled.ul`
 export const MenuItem = styled.li``;
 
 // export const MenuLink = styled(Link)``;
-export const MenuLink = styled.button`
+export const MenuLink = styled(Link)`
   width: 25px;
   height: 25px;
   margin: 10px 0;
   background: none;
+
+  &:hover {
+    svg {
+      fill: ${color.blue};
+    }
+  }
+
   svg {
     fill: ${color.gray};
   }
