@@ -21,7 +21,7 @@ export default createGlobalStyle`
 
  body{
    font: 14px 'Roboto', sans-serif;
-   background:#fafafa;
+   background:#ECECEC;
  }
 
  button {
