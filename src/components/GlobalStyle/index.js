@@ -1,5 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
+export const color = {
+  gray: '#424242',
+  red: '#C62828',
+  blue: '#1976D2',
+  yellow: '#F9A825',
+  green: '#2E7D32',
+};
+
 export default createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
