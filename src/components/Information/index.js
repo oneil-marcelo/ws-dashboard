@@ -62,4 +62,8 @@ const Information = ({ title }) => {
   );
 };
 
+Information.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
 export default Information;
