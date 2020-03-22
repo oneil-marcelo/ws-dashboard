@@ -2,15 +2,20 @@ import React from 'react';
 
 import Information from '../../components/Information';
 
-import { Container, Content } from './styles';
+import { Container, Resume, Timeline } from './styles';
 
 const Main = () => {
   return (
     <Container>
-      <Content>
+      <Resume>
         <Information title="Informações gerais" />
-      </Content>
-      <Content>Resumo</Content>
+        <Information title="Local" />
+        <Information title="Oportunidades (7)" />
+        <Information title="Informações gerais" />
+        <Information title="Local" />
+        <Information title="Oportunidades (7)" />
+      </Resume>
+      <Timeline>Resumo</Timeline>
     </Container>
   );
 };

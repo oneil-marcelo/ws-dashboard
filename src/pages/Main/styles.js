@@ -7,10 +7,14 @@ export const Container = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 `;
 
-export const Content = styled.div`
+export const Resume = styled.div`
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+`;
 
-  &:not(:first-of-type) {
-    margin-left: 15px;
-  }
+export const Timeline = styled.div`
+  margin-top: 20px;
+  margin-left: 15px;
 `;
