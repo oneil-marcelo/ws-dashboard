@@ -9,7 +9,6 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   margin-top: 20px;
-  background: #fff;
 
   &:not(:first-of-type) {
     margin-left: 15px;
