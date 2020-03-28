@@ -15,18 +15,6 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
 `;
-export const Bullet = styled.span`
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  color: #fff;
-  border-radius: 7px;
-  background: ${props => props.color};
-`;
 export const TextContainer = styled.div`
   height: 40px;
   display: flex;

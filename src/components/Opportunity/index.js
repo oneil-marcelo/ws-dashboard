@@ -3,49 +3,49 @@ import { MdInfo } from 'react-icons/md';
 
 import { Container, Title } from '../Card';
 import { color } from '../GlobalStyle';
+import QuantityMarker from '../QuantityMarker';
 
 import {
   Header,
   Contents,
   Content,
-  Bullet,
   TextContainer,
   Name,
   Description,
   Nav,
 } from './styles';
 
-const Opportunity = ({ title }) => {
+const Opportunity = () => {
   return (
     <Container>
       <Header>
-        <Title>{title} (7)</Title>
+        <Title>Oportunidades (7)</Title>
         <MdInfo size={26} color={color.gray} />
       </Header>
       <Contents>
         <Content>
-          <Bullet color={color.green}>4</Bullet>
+          <QuantityMarker color={color.green}>4</QuantityMarker>
           <TextContainer>
             <Name>Ganhas</Name>
             <Description>R$ 20.000,00</Description>
           </TextContainer>
         </Content>
         <Content>
-          <Bullet color={color.red}>1</Bullet>
+          <QuantityMarker color={color.red}>1</QuantityMarker>
           <TextContainer>
             <Name>Perdida</Name>
             <Description>R$ 4.300,00</Description>
           </TextContainer>
         </Content>
         <Content>
-          <Bullet color={color.blue}>2</Bullet>
+          <QuantityMarker color={color.blue}>2</QuantityMarker>
           <TextContainer>
             <Name>Abertas</Name>
             <Description>Diversas</Description>
           </TextContainer>
         </Content>
         <Content>
-          <Bullet color={color.gray}>0</Bullet>
+          <QuantityMarker color={color.gray}>0</QuantityMarker>
           <TextContainer>
             <Name>Descartadas</Name>
             <Description>-</Description>
