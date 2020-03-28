@@ -3,6 +3,9 @@ import React from 'react';
 import Information from '../../components/Information';
 import Place from '../../components/Place';
 import Opportunity from '../../components/Opportunity';
+import Credit from '../../components/Credit';
+import Sales from '../../components/Sales';
+import Financial from '../../components/Financial';
 
 import { Container, Resume, Row, Timeline } from './styles';
 
@@ -16,11 +19,11 @@ const Main = () => {
         </Row>
         <Row>
           <Opportunity title="Oportunidades" />
-          <Information title="Informações gerais" />
+          <Credit />
         </Row>
         <Row>
-          <Information title="Local" />
-          <Information title="Oportunidades (7)" />
+          <Sales />
+          <Financial />
         </Row>
       </Resume>
       <Timeline>Resumo</Timeline>
