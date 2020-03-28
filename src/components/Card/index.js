@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { color } from '../GlobalStyle';
 
 export const Container = styled.div`
-  min-height: 215px;
-  max-height: 315px;
+  height: inherit;
   display: flex;
   flex-direction: column;
   padding: 15px;
