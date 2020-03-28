@@ -9,9 +9,20 @@ export const Container = styled.div`
 
 export const Resume = styled.div`
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Row = styled.div`
+  width: 100%;
+  height: inherit;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+
+  &:not(:first-of-type) {
+    margin-top: 15px;
+  }
 `;
 
 export const Timeline = styled.div`
