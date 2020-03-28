@@ -2,11 +2,13 @@ import React from 'react';
 
 import { Container, Title } from '../Card';
 
+import { Message } from './styles';
+
 const Sales = () => {
   return (
     <Container>
       <Title>Vendas</Title>
-      <h1>Adicionar um gráfico aqui</h1>
+      <Message>Adicionar um gráfico aqui</Message>
     </Container>
   );
 };
