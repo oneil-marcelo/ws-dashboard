@@ -2,6 +2,7 @@ import React from 'react';
 
 import Information from '../../components/Information';
 import Place from '../../components/Place';
+import Opportunity from '../../components/Opportunity';
 
 import { Container, Resume, Row, Timeline } from './styles';
 
@@ -14,7 +15,7 @@ const Main = () => {
           <Place title="Local" />
         </Row>
         <Row>
-          <Information title="Oportunidades (7)" />
+          <Opportunity title="Oportunidades" />
           <Information title="Informações gerais" />
         </Row>
         <Row>
