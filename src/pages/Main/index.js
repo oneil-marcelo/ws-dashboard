@@ -23,9 +23,9 @@ const Main = () => {
   const [loading, setLoading] = useState(true);
   const getDataAsync = async () => {
     const [
-      customer,
+      myData,
       opportunity,
-      credit,
+      myCredit,
       financial,
       activity,
     ] = await Promise.all([
@@ -36,9 +36,9 @@ const Main = () => {
       api.get(`activity?customerId=${1}`),
     ]);
 
-    setCustomer(customer.data);
+    setCustomer(myData.data);
     setOpportunities(opportunity.data[0].resume);
-    setCredit(credit.data[0]);
+    setCredit(myCredit.data[0]);
     setSecurities(financial.data[0].securities);
     setActivities(activity.data);
     setLoading(false);
