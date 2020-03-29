@@ -30,28 +30,28 @@
           "id": 1,
           "name": "Ganhas",
           "quantity": 4,
-          "description": "R$ 20.000,00",
+          "description": "R$20.000,00",
           "status": "done"
         },
         {
           "id": 2,
           "name": "Perdida",
           "quantity": 1,
-          "description": "R$ 4.300,00",
+          "description": "R$4.300,00",
           "status": "delayed"
         },
         {
           "id": 3,
           "name": "Abertas",
           "quantity": 2,
-          "description": "Diversas moedas",
+          "description": "Diversas",
           "status": "current"
         },
         {
           "id": 4,
           "name": "Descartadas",
           "quantity": 0,
-          "description": null,
+          "description": "-",
           "status": "default"
         }
       ]

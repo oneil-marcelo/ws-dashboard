@@ -15,42 +15,25 @@ import {
   Nav,
 } from './styles';
 
-const Opportunity = () => {
+const Opportunity = ({ opportunities }) => {
   return (
     <Container>
       <Header>
-        <Title>Oportunidades (7)</Title>
+        <Title>Oportunidades ({opportunities.length})</Title>
         <MdInfo size={26} color={color.gray} />
       </Header>
       <Contents>
-        <Content>
-          <QuantityMarker color={color.green}>4</QuantityMarker>
-          <TextContainer>
-            <Name>Ganhas</Name>
-            <Description>R$ 20.000,00</Description>
-          </TextContainer>
-        </Content>
-        <Content>
-          <QuantityMarker color={color.red}>1</QuantityMarker>
-          <TextContainer>
-            <Name>Perdida</Name>
-            <Description>R$ 4.300,00</Description>
-          </TextContainer>
-        </Content>
-        <Content>
-          <QuantityMarker color={color.blue}>2</QuantityMarker>
-          <TextContainer>
-            <Name>Abertas</Name>
-            <Description>Diversas</Description>
-          </TextContainer>
-        </Content>
-        <Content>
-          <QuantityMarker color={color.gray}>0</QuantityMarker>
-          <TextContainer>
-            <Name>Descartadas</Name>
-            <Description>-</Description>
-          </TextContainer>
-        </Content>
+        {opportunities.map(opportunity => (
+          <Content>
+            <QuantityMarker color={color.green}>
+              {opportunity.quantity}
+            </QuantityMarker>
+            <TextContainer>
+              <Name>{opportunity.name}</Name>
+              <Description>{opportunity.description}</Description>
+            </TextContainer>
+          </Content>
+        ))}
       </Contents>
       <Nav to="/" color={color.blue}>
         VER TODAS AS OPORTUNIDADES
