@@ -2,7 +2,7 @@ import React from 'react';
 import { MdInfo } from 'react-icons/md';
 
 import { Container, Title } from '../Card';
-import { color } from '../GlobalStyle';
+import { color, statusColor } from '../GlobalStyle';
 import QuantityMarker from '../QuantityMarker';
 
 import {
@@ -24,8 +24,8 @@ const Opportunity = ({ opportunities }) => {
       </Header>
       <Contents>
         {opportunities.map(opportunity => (
-          <Content>
-            <QuantityMarker color={color.green}>
+          <Content key={opportunity.id}>
+            <QuantityMarker color={statusColor[opportunity.status]}>
               {opportunity.quantity}
             </QuantityMarker>
             <TextContainer>

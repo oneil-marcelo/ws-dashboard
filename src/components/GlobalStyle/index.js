@@ -8,6 +8,14 @@ export const color = {
   green: '#2E7D32',
 };
 
+export const statusColor = {
+  default: color.gray,
+  delayed: color.red,
+  current: color.blue,
+  expected: color.yellow,
+  done: color.green,
+};
+
 export default createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
