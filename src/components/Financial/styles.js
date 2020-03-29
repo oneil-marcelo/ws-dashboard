@@ -5,7 +5,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  margin: 20px 0;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-start;
 `;

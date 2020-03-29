@@ -4,7 +4,7 @@ import { color } from '../../components/GlobalStyle';
 
 export const Container = styled.div`
   flex: 1;
-  padding: 0 15px;
+  padding: 0 15px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 `;
