@@ -75,8 +75,13 @@ export const SocialMedia = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+`;
+
+export const MediaLink = styled.a`
+  color: ${color.gray};
+  opacity: ${props => (props.href ? 1 : 0.5)};
+
   svg {
     margin-left: 8px;
-    opacity: 0.5;
   }
 `;

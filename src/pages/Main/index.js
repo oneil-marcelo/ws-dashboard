@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdSearch } from 'react-icons/md';
 
 import Information from '../../components/Information';
@@ -15,11 +15,37 @@ import api from '../../services/api';
 import { Container, Resume, Row, Activities, Form, Input } from './styles';
 
 const Main = () => {
+  const [customer, setCustomer] = useState({});
+  const [loading, setLoading] = useState(true);
+  const getDataAsync = async () => {
+    const [
+      customer,
+      opportunity,
+      credit,
+      financial,
+      activity,
+    ] = await Promise.all([
+      api.get(`customer/${1}`),
+      api.get(`opportunity?customerId=${1}`),
+      api.get(`credit?customerId=${1}`),
+      api.get(`financial?customerId=${1}`),
+      api.get(`activity?customerId=${1}`),
+    ]);
+
+    setCustomer(customer.data);
+    setLoading(false);
+  };
+  useEffect(() => {
+    getDataAsync();
+  }, []);
+
+  if (loading) return <h5>carregando...</h5>;
+
   return (
     <Container>
       <Resume>
         <Row>
-          <Information title="Informações gerais" />
+          <Information customer={customer} />
           <Place title="Local" />
         </Row>
         <Row>
