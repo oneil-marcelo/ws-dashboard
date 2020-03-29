@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { MdSearch } from 'react-icons/md';
 
 import Information from '../../components/Information';
@@ -11,10 +13,12 @@ import { Container as Content, Title } from '../../components/Card';
 import ActivitiesResume from '../../components/ActivitiesResume';
 import Timeline from '../../components/Timeline';
 import api from '../../services/api';
+import * as CustomerActions from '../../store/modules/customer/actions';
 
 import { Container, Resume, Row, Activities, Form, Input } from './styles';
 
-const Main = () => {
+const Main = ({ getCustomerById }) => {
+  getCustomerById(1);
   const [customer, setCustomer] = useState({});
   const [opportunities, setOpportunities] = useState([]);
   const [credit, setCredit] = useState({});
@@ -80,4 +84,7 @@ const Main = () => {
   );
 };
 
-export default Main;
+const MapActionsToProps = dispatch =>
+  bindActionCreators(CustomerActions, dispatch);
+
+export default connect(null, MapActionsToProps)(Main);
