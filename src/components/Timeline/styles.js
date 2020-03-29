@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  height: 690px;
   margin-top: 25px;
-  display: flex;
+  display: inline-block;
   flex-direction: column;
+  overflow-y: scroll;
 `;
 
 export const Section = styled.div`

@@ -19,6 +19,7 @@ const Main = () => {
   const [opportunities, setOpportunities] = useState([]);
   const [credit, setCredit] = useState({});
   const [securities, setSecurities] = useState([]);
+  const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
   const getDataAsync = async () => {
     const [
@@ -39,6 +40,7 @@ const Main = () => {
     setOpportunities(opportunity.data[0].resume);
     setCredit(credit.data[0]);
     setSecurities(financial.data[0].securities);
+    setActivities(activity.data);
     setLoading(false);
   };
   useEffect(() => {
@@ -70,8 +72,8 @@ const Main = () => {
             <MdSearch size={26} />
             <Input type="text" />
           </Form>
-          <ActivitiesResume />
-          <Timeline />
+          <ActivitiesResume activities={activities} />
+          <Timeline activities={activities} />
         </Content>
       </Activities>
     </Container>

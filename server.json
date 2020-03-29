@@ -142,7 +142,7 @@
       "annotations": [
         {
           "id": 5,
-          "type": "calendar",
+          "type": "agenda",
           "description": "Apresentação feira agrícola",
           "responsable": "Caroline Diaz",
           "statusReport": "Segunda-feira (17/09/2018) às 08h"

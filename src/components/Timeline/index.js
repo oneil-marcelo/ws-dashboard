@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import { MdPhone, MdMail, MdPeople } from 'react-icons/md';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { MdPhone, MdMail, MdPeople, MdAssignmentLate } from 'react-icons/md';
+
+import { statusColor } from '../GlobalStyle';
 
 import {
   Container,
@@ -19,63 +22,29 @@ const Icon = {
   phone: <MdPhone size={20} />,
   mail: <MdMail size={20} />,
   people: <MdPeople size={20} />,
+  agenda: <MdAssignmentLate size={20} />,
 };
 
-const Timeline = () => {
-  const agenda = [
-    {
-      id: 1,
-      group: 'delayer',
-      color: '#c62828',
-      annotations: [
-        {
-          id: 10,
-          type: 'phone',
-          description: 'Ligação de agendamento da reunião',
-          responsable: 'Érica Collins',
-          status: 'Em atraso por 4 dias',
-        },
-      ],
-    },
-    {
-      id: 2,
-      group: 'delayed',
-      color: '#F9A825',
-      annotations: [
-        {
-          id: 11,
-          type: 'people',
-          description: 'Ligação de agendamento da reunião',
-          responsable: 'Érica Collins',
-          status: 'Em atraso por 4 dias',
-        },
-        {
-          id: 12,
-          type: 'mail',
-          description: 'Ligação de agendamento da reunião',
-          responsable: 'Érica Collins',
-          status: 'Em atraso por 4 dias',
-        },
-      ],
-    },
-  ];
-  const [activities] = useState(agenda);
+const Timeline = ({ activities }) => {
   return (
     <Container>
       {activities.map(activity => (
         <Section key={activity.id}>
           <Header>
-            <Bullet color={activity.color} />
+            <Bullet color={statusColor[activity.status]} />
             <SectionTitle>Atividades em atraso</SectionTitle>
           </Header>
           <ActivityList>
             {activity.annotations.map(annotation => (
-              <ActivityItem key={annotation.id} color={activity.color}>
+              <ActivityItem
+                key={annotation.id}
+                color={statusColor[activity.status]}
+              >
                 {Icon[annotation.type]}
                 <ContainerText>
-                  <Name>Ligação de agendamento de reunião</Name>
-                  <Responsable>Erica Collins</Responsable>
-                  <Status>Em atraso por 4 dias</Status>
+                  <Name>{annotation.description}</Name>
+                  <Responsable>{annotation.responsable}</Responsable>
+                  <Status>{annotation.statusReport}</Status>
                 </ContainerText>
               </ActivityItem>
             ))}
@@ -84,6 +53,20 @@ const Timeline = () => {
       ))}
     </Container>
   );
+};
+
+Timeline.propTypes = {
+  activities: PropTypes.arrayOf({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    status: PropTypes.string,
+    annotations: PropTypes.arrayOf({
+      id: PropTypes.number,
+      type: PropTypes.string,
+      responsable: PropTypes.string,
+      statusColor: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 export default Timeline;
