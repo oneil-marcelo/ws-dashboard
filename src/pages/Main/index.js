@@ -16,8 +16,9 @@ import { Container, Resume, Row, Activities, Form, Input } from './styles';
 
 const Main = () => {
   const [customer, setCustomer] = useState({});
-  const [opportunities, setOpportunities] = useState({});
+  const [opportunities, setOpportunities] = useState([]);
   const [credit, setCredit] = useState({});
+  const [securities, setSecurities] = useState([]);
   const [loading, setLoading] = useState(true);
   const getDataAsync = async () => {
     const [
@@ -37,6 +38,7 @@ const Main = () => {
     setCustomer(customer.data);
     setOpportunities(opportunity.data[0].resume);
     setCredit(credit.data[0]);
+    setSecurities(financial.data[0].securities);
     setLoading(false);
   };
   useEffect(() => {
@@ -58,7 +60,7 @@ const Main = () => {
         </Row>
         <Row>
           <Sales />
-          <Financial />
+          <Financial securities={securities} />
         </Row>
       </Resume>
       <Activities>

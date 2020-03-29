@@ -71,16 +71,19 @@
         {
           "quantity": 1,
           "amount": "3.105,00",
+          "description": "Vencidos",
           "status": "delayed"
         },
         {
           "quantity": 2,
           "amount": "3.105,00",
+          "description": "A vencer",
           "status": "expected"
         },
         {
           "quantity": 2,
           "amount": "3.105,00",
+          "description": "Pagos",
           "status": "done"
         }
       ]
