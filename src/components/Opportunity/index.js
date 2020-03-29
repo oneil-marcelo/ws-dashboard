@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdInfo } from 'react-icons/md';
+import PropTypes from 'prop-types';
 
 import { Container, Title } from '../Card';
 import { color, statusColor } from '../GlobalStyle';
@@ -16,10 +17,16 @@ import {
 } from './styles';
 
 const Opportunity = ({ opportunities }) => {
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const res = opportunities.reduce((t, o) => t + o.quantity, 0);
+    setTotal(res);
+  }, []);
   return (
     <Container>
       <Header>
-        <Title>Oportunidades ({opportunities.length})</Title>
+        <Title>Oportunidades ({total})</Title>
         <MdInfo size={26} color={color.gray} />
       </Header>
       <Contents>
@@ -40,6 +47,16 @@ const Opportunity = ({ opportunities }) => {
       </Nav>
     </Container>
   );
+};
+
+Opportunity.propTypes = {
+  opportunities: PropTypes.arrayOf({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    quantity: PropTypes.int,
+    description: PropTypes.string,
+    status: PropTypes.string,
+  }).isRequired,
 };
 
 export default Opportunity;
