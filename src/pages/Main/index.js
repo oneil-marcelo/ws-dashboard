@@ -10,6 +10,7 @@ import Financial from '../../components/Financial';
 import { Container as Content, Title } from '../../components/Card';
 import ActivitiesResume from '../../components/ActivitiesResume';
 import Timeline from '../../components/Timeline';
+import api from '../../services/api';
 
 import { Container, Resume, Row, Activities, Form, Input } from './styles';
 

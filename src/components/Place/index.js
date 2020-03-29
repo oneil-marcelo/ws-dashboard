@@ -12,7 +12,7 @@ const Place = ({ title }) => {
   return (
     <Container>
       <Title>{title}</Title>
-      <div style={{ flex: 1, background: '#f1f' }}>
+      <div style={{ flex: 1 }}>
         <Map latitude={-23.5439948} longitude={-46.6065452} />
       </div>
       <Legend>
