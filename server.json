@@ -1,0 +1,169 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Justine Robinson",
+      "enterprise": "Acme inc",
+      "active": true,
+      "phone": "45 9 9555 55555",
+      "phoneType": "Celular",
+      "email": "justine@email.com",
+      "emailType": "Trabalho",
+      "address": "Avenida Brasil, 4019",
+      "addressType": "Trabalho",
+      "socialMedia": {
+        "whatsapp": "55 41 9555 55555",
+        "instagram": "https://www.instagram.com/wealth_systems/",
+        "facebook": null,
+        "twitter": null,
+        "linkedin": null
+      }
+    }
+  ],
+  "opportunity": [
+    {
+      "customerId": 1,
+      "resume": [
+        {
+          "id": 1,
+          "name": "Ganhas",
+          "quantity": 4,
+          "description": "R$ 20.000,00",
+          "status": "done"
+        },
+        {
+          "id": 2,
+          "name": "Perdida",
+          "quantity": 1,
+          "description": "R$ 4.300,00",
+          "status": "delayed"
+        },
+        {
+          "id": 3,
+          "name": "Abertas",
+          "quantity": 2,
+          "description": "Diversas moedas",
+          "status": "current"
+        },
+        {
+          "id": 4,
+          "name": "Descartadas",
+          "quantity": 0,
+          "description": null,
+          "status": "default"
+        }
+      ]
+    }
+  ],
+  "credit": [
+    {
+      "customerId": 1,
+      "granted": "12.000,02",
+      "available": "3.105,00"
+    }
+  ],
+  "financial": [
+    {
+      "customerId": 1,
+      "securities": [
+        {
+          "quantity": 1,
+          "amount": "3.105,00",
+          "status": "delayed"
+        },
+        {
+          "quantity": 2,
+          "amount": "3.105,00",
+          "status": "expected"
+        },
+        {
+          "quantity": 2,
+          "amount": "3.105,00",
+          "status": "done"
+        }
+      ]
+    }
+  ],
+  "activity": [
+    {
+      "customerId": 1,
+      "id": 1,
+      "name": "Atividades em atraso",
+      "status": "delayed",
+      "annotations": [
+        {
+          "id": 1,
+          "type": "phone",
+          "description": "Ligação de agendamento da reunião",
+          "responsable": "Érica Collins",
+          "statusReport": "Em atraso por 4 dias"
+        }
+      ]
+    },
+    {
+      "customerId": 1,
+      "id": 2,
+      "name": "Atividades previstas",
+      "status": "expected",
+      "annotations": [
+        {
+          "id": 2,
+          "type": "people",
+          "description": "Reunião orçamento",
+          "responsable": "Abigal Fisher",
+          "statusReport": "Hoje às 15h"
+        },
+        {
+          "id": 3,
+          "type": "mail",
+          "description": "Email documentação",
+          "responsable": "Jeffery King",
+          "statusReport": "Amanhã às 09:45"
+        },
+        {
+          "id": 4,
+          "type": "agenda",
+          "description": "Almoço coorporativo",
+          "responsable": "Lawrence Kelly",
+          "statusReport": "Amanhã às 15h"
+        }
+      ]
+    },
+    {
+      "customerId": 1,
+      "id": 3,
+      "name": "Atividades Concluídas",
+      "status": "done",
+      "annotations": [
+        {
+          "id": 5,
+          "type": "calendar",
+          "description": "Apresentação feira agrícola",
+          "responsable": "Caroline Diaz",
+          "statusReport": "Segunda-feira (17/09/2018) às 08h"
+        },
+        {
+          "id": 6,
+          "type": "mail",
+          "description": "Email orçamento",
+          "responsable": "Arthur Klark",
+          "statusReport": "Terça-feira (18/09/2018) às 13h"
+        },
+        {
+          "id": 7,
+          "type": "mail",
+          "description": "Email contrato",
+          "responsable": "Freida Howard",
+          "statusReport": "Segunda-feira (17/09/2018) às 10h"
+        },
+        {
+          "id": 8,
+          "type": "phone",
+          "description": "Ligação Contrato",
+          "responsable": "Dylan Watsor",
+          "statusReport": "Quarta-feira (19/09/2018) às 13h"
+        }
+      ]
+    }
+  ]
+}
