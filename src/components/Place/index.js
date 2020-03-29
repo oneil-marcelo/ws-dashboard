@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MdPlace } from 'react-icons/md';
+import { connect } from 'react-redux';
 
 import { color } from '../GlobalStyle';
 import Map from '../Map';
@@ -8,7 +9,7 @@ import { Container, Title } from '../Card';
 
 import { Legend, TextContent, Address, AddressType } from './styles';
 
-const Place = ({ customer }) => {
+const Place = ({ customer, loading }) => {
   return (
     <Container>
       <Title>Localização</Title>
@@ -33,6 +34,12 @@ Place.propTypes = {
     address: PropTypes.string,
     addressType: PropTypes.string,
   }).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-export default Place;
+const MapStateToProps = state => ({
+  customer: state.customer.data,
+  loading: state.customer.loading,
+});
+
+export default connect(MapStateToProps)(Place);
