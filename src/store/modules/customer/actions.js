@@ -1,6 +1,11 @@
-const EActionType = {
-  DATA_REQUEST: '@customer/DATA_REQUEST',
-  DATA_SUCCESS: '@customer/DATA_SUCCESS',
-};
+import EActionType from './actionType';
 
-export default EActionType;
+export const getData = id => ({
+  type: EActionType.GET_DATA,
+  id,
+});
+
+export const getDataSuccess = customer => ({
+  type: EActionType.GET_DATA_SUCCESS,
+  customer,
+});

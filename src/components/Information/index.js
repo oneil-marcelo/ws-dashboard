@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { MdPerson, MdLocalPhone, MdMarkunread } from 'react-icons/md';
 import {
   FaWhatsapp,
@@ -24,7 +25,8 @@ import {
   MediaLink,
 } from './styles';
 
-const Information = ({ customer }) => {
+const Information = ({ customer, customer1 }) => {
+  console.log(customer1);
   return (
     <Container>
       <Title>Informações gerais</Title>
@@ -97,4 +99,8 @@ Information.propTypes = {
   }).isRequired,
 };
 
-export default Information;
+const mapStateToProps = state => ({
+  customer1: state.customer,
+});
+
+export default connect(mapStateToProps)(Information);
