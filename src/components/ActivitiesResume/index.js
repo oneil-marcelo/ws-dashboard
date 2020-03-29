@@ -1,35 +1,71 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { color } from '../GlobalStyle';
+import { statusColor } from '../GlobalStyle';
 import QuantityMarker from '../QuantityMarker';
 
 import { Container, Content, Label } from './styles';
 
-const ActivitiesResume = () => {
+const ActivitiesResume = ({ activities }) => {
+  const delayed = activities.find(activity => activity.status === 'delayed');
+  const current = activities.find(activity => activity.status === 'current');
+  const expected = activities.find(activity => activity.status === 'expected');
+  const done = activities.find(activity => activity.status === 'done');
+
+  const delayedQuantity = delayed ? delayed.annotations.length : 0;
+  const currentQuantity = current ? current.annotations.length : 0;
+  const expectedQuantity = expected ? expected.annotations.length : 0;
+  const doneQuantity = delayed ? done.annotations.length : 0;
+
+  const total =
+    delayedQuantity + currentQuantity + expectedQuantity + doneQuantity;
+
   return (
     <Container>
       <Content>
-        <QuantityMarker color={color.gray}>25</QuantityMarker>
+        <QuantityMarker color={statusColor['default']}>{total}</QuantityMarker>
         <Label hasBgcolor>Total</Label>
       </Content>
       <Content>
-        <QuantityMarker color={color.red}>1</QuantityMarker>
+        <QuantityMarker color={statusColor['delayed']}>
+          {delayedQuantity}
+        </QuantityMarker>
         <Label>Atradas</Label>
       </Content>
       <Content>
-        <QuantityMarker color={color.blue}>0</QuantityMarker>
+        <QuantityMarker color={statusColor['current']}>
+          {currentQuantity}
+        </QuantityMarker>
         <Label>Andamento</Label>
       </Content>
       <Content>
-        <QuantityMarker color={color.yellow}>3</QuantityMarker>
+        <QuantityMarker color={statusColor['expected']}>
+          {expectedQuantity}
+        </QuantityMarker>
         <Label>Previstas</Label>
       </Content>
       <Content>
-        <QuantityMarker color={color.green}>21</QuantityMarker>
+        <QuantityMarker color={statusColor['done']}>
+          {doneQuantity}
+        </QuantityMarker>
         <Label>Concluídas</Label>
       </Content>
     </Container>
   );
+};
+
+ActivitiesResume.propTypes = {
+  activities: PropTypes.arrayOf({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    status: PropTypes.string,
+    annotations: PropTypes.arrayOf({
+      id: PropTypes.number,
+      type: PropTypes.string,
+      responsable: PropTypes.string,
+      statusColor: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 export default ActivitiesResume;
