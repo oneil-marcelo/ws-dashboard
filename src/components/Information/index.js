@@ -77,18 +77,23 @@ const Information = ({ customer }) => {
 
 Information.propTypes = {
   customer: PropTypes.shape({
-    id: 1,
-    name: 'Justine Robinson',
-    enterprise: 'Acme inc',
-    active: true,
-    phone: '45 9 9555 55555',
-    phoneType: 'Celular',
-    email: 'justine@email.com',
-    emailType: 'Trabalho',
-    address: 'Avenida Brasil, 4019',
-    addressType: 'Trabalho',
-    latitude: -23.5439948,
-    longitude: -46.6065452,
+    id: PropTypes.number,
+    name: PropTypes.string,
+    enterprise: PropTypes.string,
+    active: PropTypes.bool,
+    phone: PropTypes.string,
+    phoneType: PropTypes.string,
+    email: PropTypes.string,
+    emailType: PropTypes.string,
+    address: PropTypes.string,
+    addressType: PropTypes.string,
+    socialMedia: PropTypes.shape({
+      whatsapp: PropTypes.string,
+      instagram: PropTypes.string,
+      facebook: PropTypes.string,
+      twitter: PropTypes.string,
+      linkedin: PropTypes.string,
+    }),
   }).isRequired,
 };
 

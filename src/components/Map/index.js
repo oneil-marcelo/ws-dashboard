@@ -10,9 +10,9 @@ const Map = ({ latitude, longitude }) => {
     <MapGL
       width="100%"
       height="100%"
-      latitude={-23.5439948}
-      longitude={-46.6065452}
-      zoom={14}
+      latitude={latitude}
+      longitude={longitude}
+      zoom={15}
       mapStyle="mapbox://styles/mapbox/basic-v9"
       mapboxApiAccessToken="pk.eyJ1IjoiZGllZ28zZyIsImEiOiJjamh0aHc4em0wZHdvM2tyc3hqbzNvanhrIn0.3HWnXHy_RCi35opzKo8sHQ"
     >

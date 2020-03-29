@@ -8,18 +8,18 @@ import { Container, Title } from '../Card';
 
 import { Legend, TextContent, Address, AddressType } from './styles';
 
-const Place = ({ title }) => {
+const Place = ({ customer }) => {
   return (
     <Container>
-      <Title>{title}</Title>
+      <Title>Localização</Title>
       <div style={{ flex: 1 }}>
-        <Map latitude={-23.5439948} longitude={-46.6065452} />
+        <Map latitude={customer.latitude} longitude={customer.longitude} />
       </div>
       <Legend>
         <MdPlace size={22} color={color.gray} />
         <TextContent>
-          <Address>Avenida Brasil, 4019</Address>
-          <AddressType>Trabalho</AddressType>
+          <Address>{customer.address}</Address>
+          <AddressType>{customer.addressType}</AddressType>
         </TextContent>
       </Legend>
     </Container>
@@ -27,7 +27,12 @@ const Place = ({ title }) => {
 };
 
 Place.propTypes = {
-  title: PropTypes.string.isRequired,
+  customer: PropTypes.shape({
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+    address: PropTypes.string,
+    addressType: PropTypes.string,
+  }).isRequired,
 };
 
 export default Place;
