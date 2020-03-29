@@ -33,7 +33,6 @@ const Main = ({ getCustomerById }) => {
       financial,
       activity,
     ] = await Promise.all([
-      api.get(`customer/${1}`),
       api.get(`opportunity?customerId=${1}`),
       api.get(`credit?customerId=${1}`),
       api.get(`financial?customerId=${1}`),
@@ -57,7 +56,7 @@ const Main = ({ getCustomerById }) => {
     <Container>
       <Resume>
         <Row>
-          <Information customer={customer} />
+          <Information />
           <Place customer={customer} />
         </Row>
         <Row>

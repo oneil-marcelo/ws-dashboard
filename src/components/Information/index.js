@@ -25,8 +25,7 @@ import {
   MediaLink,
 } from './styles';
 
-const Information = ({ customer, customer1 }) => {
-  console.log(customer1);
+const Information = ({ customer }) => {
   return (
     <Container>
       <Title>Informações gerais</Title>
@@ -100,7 +99,7 @@ Information.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  customer1: state.customer,
+  customer: state.customer.data,
 });
 
 export default connect(mapStateToProps)(Information);
