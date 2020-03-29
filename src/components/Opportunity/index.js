@@ -23,6 +23,7 @@ const Opportunity = ({ opportunities }) => {
     const res = opportunities.reduce((t, o) => t + o.quantity, 0);
     setTotal(res);
   }, []);
+
   return (
     <Container>
       <Header>
