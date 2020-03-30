@@ -19,22 +19,15 @@ import { Container, Resume, Row, Activities, Form, Input } from './styles';
 
 const Main = ({ getCustomerById }) => {
   getCustomerById(1);
-
-  const [opportunities, setOpportunities] = useState([]);
-  const [credit, setCredit] = useState({});
   const [securities, setSecurities] = useState([]);
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
   const getDataAsync = async () => {
-    const [opportunity, myCredit, financial, activity] = await Promise.all([
-      api.get(`opportunity?customerId=${1}`),
-      api.get(`credit?customerId=${1}`),
+    const [financial, activity] = await Promise.all([
       api.get(`financial?customerId=${1}`),
       api.get(`activity?customerId=${1}`),
     ]);
 
-    setOpportunities(opportunity.data[0].resume);
-    setCredit(myCredit.data[0]);
     setSecurities(financial.data[0].securities);
     setActivities(activity.data);
     setLoading(false);
@@ -54,7 +47,7 @@ const Main = ({ getCustomerById }) => {
         </Row>
         <Row>
           <Opportunity />
-          <Credit credit={credit} />
+          <Credit />
         </Row>
         <Row>
           <Sales />

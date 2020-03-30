@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { Container, Title } from '../Card';
 import { color } from '../GlobalStyle';
@@ -29,4 +30,9 @@ Credit.propTypes = {
   }).isRequired,
 };
 
-export default Credit;
+const mapStateToProps = state => ({
+  credit: state.credit.data,
+  loading: state.credit.loading,
+});
+
+export default connect(mapStateToProps)(Credit);
