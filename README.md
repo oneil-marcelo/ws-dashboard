@@ -4,24 +4,19 @@ A aplicação é um desafio para criar uma tela de relatório de cliente com o R
 
 ### Como executar a aplicação
 
-- Clonar repositório
-
+**_Clonar repositório_**
 `git clone https://github.com/oneil-marcelo/ws-dashboard.git`
 
-- Na pasta do projeto executar npm
-
+**_Na pasta do projeto executar npm_**
 `npm install`
 
-- Instalar de maneira global o <strong>json-server<strong>
-
+**_Instalar de maneira global o <strong>json-server<strong>_**
 `npm install -g json-server`
 
-- executar o json-server na porta 3333 para emular o banco através do arquivo server.json
-
+**_executar o json-server na porta 3333 para emular o banco através do arquivo server.json_**
 `json-server server.json -p3333`
 
-- executar a aplicação
-
+**_executar a aplicação_**
 `npm start`
 
 ### Sobre a aplicação
