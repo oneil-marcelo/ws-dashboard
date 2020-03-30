@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { Container, Title } from '../Card';
 import QuantityMarker from '../QuantityMarker';
@@ -36,4 +37,9 @@ Financial.propTypes = {
   }).isRequired,
 };
 
-export default Financial;
+const mapStateToProps = state => ({
+  securities: state.financial.data,
+  loading: state.financial.loading,
+});
+
+export default connect(mapStateToProps)(Financial);

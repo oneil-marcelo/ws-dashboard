@@ -7,7 +7,7 @@ import { color } from '../GlobalStyle';
 
 import { Content, Amount, Description } from './styles';
 
-const Credit = ({ credit }) => {
+const Credit = ({ credit, loading }) => {
   return (
     <Container>
       <Title>Limite de Crédito</Title>
@@ -28,6 +28,7 @@ Credit.propTypes = {
     granted: PropTypes.string,
     available: PropTypes.string,
   }).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

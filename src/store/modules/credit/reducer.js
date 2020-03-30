@@ -11,7 +11,7 @@ export default function credit(state = INITIAL_STATE, action) {
     case EActionType.DATA_REQUEST:
       return { ...state, loading: true };
     case EActionType.DATA_REQUEST_SUCCESS:
-      return { ...state, loading: false, data: action.credities };
+      return { ...state, loading: false, data: action.credit };
     default:
       return state;
   }

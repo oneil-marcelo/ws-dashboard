@@ -19,16 +19,12 @@ import { Container, Resume, Row, Activities, Form, Input } from './styles';
 
 const Main = ({ getCustomerById }) => {
   getCustomerById(1);
-  const [securities, setSecurities] = useState([]);
+
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
   const getDataAsync = async () => {
-    const [financial, activity] = await Promise.all([
-      api.get(`financial?customerId=${1}`),
-      api.get(`activity?customerId=${1}`),
-    ]);
+    const [activity] = await Promise.all([api.get(`activity?customerId=${1}`)]);
 
-    setSecurities(financial.data[0].securities);
     setActivities(activity.data);
     setLoading(false);
   };
@@ -51,7 +47,7 @@ const Main = ({ getCustomerById }) => {
         </Row>
         <Row>
           <Sales />
-          <Financial securities={securities} />
+          <Financial />
         </Row>
       </Resume>
       <Activities>

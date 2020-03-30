@@ -5,7 +5,7 @@ export const getCreditByCustomer = customerId => ({
   customerId,
 });
 
-export const getCreditSuccess = credities => ({
+export const getCreditSuccess = credit => ({
   type: EActionType.DATA_REQUEST_SUCCESS,
-  credities,
+  credit,
 });
