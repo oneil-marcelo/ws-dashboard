@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WS-Dashboard
 
-## Available Scripts
+A aplicação é um desafio para criar uma tela de relatório de cliente com o React.
 
-In the project directory, you can run:
+## Como executar a aplicação
 
-### `npm start`
+- Clonar repositório
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[code] git clone https://github.com/oneil-marcelo/ws-dashboard.git [code]
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Na pasta do projeto executar npm
 
-### `npm test`
+[code] npm install [code]
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Instalar de maneira global o <strong>json-server<strong>
 
-### `npm run build`
+[code] npm install -g json-server[code]
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- executar o json-server na porta 3333 para emular o banco através do arquivo server.json
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[code] json-server server.json -p3333 [code]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- executar a aplicação
 
-### `npm run eject`
+[code] npm start [code]
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Sobre a aplicação
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A aplicação simula uma tela de relatório de cliente, considerando que ele pode navegar para demais telas, foi criado o sistema de rota, embora a única rota implementada foi a home.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Também implementando os estado global da aplicação usando conceito de arquitetura flux através do Redux.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Uma vez detectado que o cliente está logado, todos os componentes, através do contexto que está conectado é notificado e assim seu estado e sua interface é manipulado.
 
-## Learn More
+Essa necessidade foi vista durante o desenvolvimento e maior independência dos componentes em relação a página principal.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Sobre os dados da aplicação
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Os dados são um mockup no arquivo server.json que fica na raiz do projeto.
 
-### Code Splitting
+Em conjunto com o pacote json-server que simula um serviço rest, foi criada uma API local que permitiu implementar os serviços http.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Sobre os serviços http
 
-### Analyzing the Bundle Size
+Visto que aplicação é um teste e que API não apresenta comportamento indesejável, foi implementado apenas os cenários de sucesso nas requisições.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Considerações
 
-### Making a Progressive Web App
+Nesse momento a aplicação foi tratada apenas para dispositivos desktop, torná-la responsiva não foi o foco.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+O principal o objetivo foi organizar o código e aplicar uma estrutura que permita a aplicação ser escalável.
