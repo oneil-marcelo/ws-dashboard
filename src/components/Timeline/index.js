@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { MdPhone, MdMail, MdPeople, MdAssignmentLate } from 'react-icons/md';
 
 import { statusColor } from '../GlobalStyle';
+import Loading from '../Loading';
 
 import {
   Container,
@@ -27,6 +28,8 @@ const Icon = {
 };
 
 const Timeline = ({ activities, loading }) => {
+  if (loading) return <Loading>carregando...</Loading>;
+
   return (
     <Container>
       {activities.map(activity => (

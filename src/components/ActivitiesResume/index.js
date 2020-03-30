@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { statusColor } from '../GlobalStyle';
 import QuantityMarker from '../QuantityMarker';
+import Loading from '../Loading';
 
 import { Container, Content, Label } from './styles';
 
@@ -20,6 +21,8 @@ const ActivitiesResume = ({ activities, loading }) => {
 
   const total =
     delayedQuantity + currentQuantity + expectedQuantity + doneQuantity;
+
+  if (loading) return <Loading>carregando...</Loading>;
 
   return (
     <Container>

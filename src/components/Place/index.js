@@ -6,10 +6,12 @@ import { connect } from 'react-redux';
 import { color } from '../GlobalStyle';
 import Map from '../Map';
 import { Container, Title } from '../Card';
+import Loading from '../Loading';
 
 import { Legend, TextContent, Address, AddressType } from './styles';
 
 const Place = ({ customer, loading }) => {
+  if (loading) return <Loading>carregando...</Loading>;
   return (
     <Container>
       <Title>Localização</Title>

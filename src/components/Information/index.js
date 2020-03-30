@@ -24,8 +24,11 @@ import {
   SocialMedia,
   MediaLink,
 } from './styles';
+import Loading from '../Loading';
 
 const Information = ({ customer, loading }) => {
+  if (loading) return <Loading>carregando...</Loading>;
+
   return (
     <Container>
       <Title>Informações gerais</Title>

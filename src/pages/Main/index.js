@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MdSearch } from 'react-icons/md';
+import PropTypes from 'prop-types';
 
 import Information from '../../components/Information';
 import Place from '../../components/Place';
@@ -22,7 +23,7 @@ const Main = ({ getCustomerById }) => {
 
   const [loading, setLoading] = useState(true);
   const getDataAsync = async () => {
-    const [activity] = await Promise.all([api.get(`activity?customerId=${1}`)]);
+    await api.get(`activity?customerId=${1}`);
 
     setLoading(false);
   };
@@ -61,6 +62,10 @@ const Main = ({ getCustomerById }) => {
       </Activities>
     </Container>
   );
+};
+
+Main.propTypes = {
+  getCustomerById: PropTypes.func.isRequired,
 };
 
 const MapActionsToProps = dispatch =>

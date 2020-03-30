@@ -4,10 +4,13 @@ import { connect } from 'react-redux';
 
 import { Container, Title } from '../Card';
 import { color } from '../GlobalStyle';
+import Loading from '../Loading';
 
 import { Content, Amount, Description } from './styles';
 
 const Credit = ({ credit, loading }) => {
+  if (loading) return <Loading>carregando...</Loading>;
+
   return (
     <Container>
       <Title>Limite de Crédito</Title>

@@ -5,10 +5,13 @@ import { connect } from 'react-redux';
 import { Container, Title } from '../Card';
 import QuantityMarker from '../QuantityMarker';
 import { statusColor } from '../GlobalStyle';
+import Loading from '../Loading';
 
 import { List, ListItem, TextContainer, Amount, Description } from './styles';
 
-const Financial = ({ securities }) => {
+const Financial = ({ securities, loading }) => {
+  if (loading) return <Loading>carregando...</Loading>;
+
   return (
     <Container>
       <Title>Títulos Financeiros</Title>
@@ -35,6 +38,7 @@ Financial.propTypes = {
     amount: PropTypes.string,
     status: PropTypes.string,
   }).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
