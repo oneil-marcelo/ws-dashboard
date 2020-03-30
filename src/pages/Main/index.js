@@ -53,7 +53,7 @@ const Main = ({ getCustomerById }) => {
           <Place />
         </Row>
         <Row>
-          <Opportunity opportunities={opportunities} />
+          <Opportunity />
           <Credit credit={credit} />
         </Row>
         <Row>

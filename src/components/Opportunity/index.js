@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { MdInfo } from 'react-icons/md';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { Container, Title } from '../Card';
 import { color, statusColor } from '../GlobalStyle';
@@ -16,13 +17,8 @@ import {
   Nav,
 } from './styles';
 
-const Opportunity = ({ opportunities }) => {
-  const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    const res = opportunities.reduce((t, o) => t + o.quantity, 0);
-    setTotal(res);
-  }, []);
+const Opportunity = ({ opportunities, loading }) => {
+  const total = opportunities.reduce((t, o) => t + o.quantity, 0);
 
   return (
     <Container>
@@ -58,6 +54,12 @@ Opportunity.propTypes = {
     description: PropTypes.string,
     status: PropTypes.string,
   }).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-export default Opportunity;
+const mapStateToProps = state => ({
+  opportunities: state.opportunity.data,
+  loading: state.opportunity.loading,
+});
+
+export default connect(mapStateToProps)(Opportunity);
