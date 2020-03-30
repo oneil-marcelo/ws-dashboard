@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { statusColor } from '../GlobalStyle';
 import QuantityMarker from '../QuantityMarker';
 
 import { Container, Content, Label } from './styles';
 
-const ActivitiesResume = ({ activities }) => {
+const ActivitiesResume = ({ activities, loading }) => {
   const delayed = activities.find(activity => activity.status === 'delayed');
   const current = activities.find(activity => activity.status === 'current');
   const expected = activities.find(activity => activity.status === 'expected');
@@ -66,6 +67,12 @@ ActivitiesResume.propTypes = {
       statusColor: PropTypes.string,
     }),
   }).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-export default ActivitiesResume;
+const mapStateToProps = state => ({
+  activities: state.activity.data,
+  loading: state.activity.loading,
+});
+
+export default connect(mapStateToProps)(ActivitiesResume);

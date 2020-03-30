@@ -20,12 +20,10 @@ import { Container, Resume, Row, Activities, Form, Input } from './styles';
 const Main = ({ getCustomerById }) => {
   getCustomerById(1);
 
-  const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
   const getDataAsync = async () => {
     const [activity] = await Promise.all([api.get(`activity?customerId=${1}`)]);
 
-    setActivities(activity.data);
     setLoading(false);
   };
   useEffect(() => {
@@ -57,8 +55,8 @@ const Main = ({ getCustomerById }) => {
             <MdSearch size={26} />
             <Input type="text" />
           </Form>
-          <ActivitiesResume activities={activities} />
-          <Timeline activities={activities} />
+          <ActivitiesResume />
+          <Timeline />
         </Content>
       </Activities>
     </Container>

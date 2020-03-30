@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { MdPhone, MdMail, MdPeople, MdAssignmentLate } from 'react-icons/md';
 
 import { statusColor } from '../GlobalStyle';
@@ -25,7 +26,7 @@ const Icon = {
   agenda: <MdAssignmentLate size={20} />,
 };
 
-const Timeline = ({ activities }) => {
+const Timeline = ({ activities, loading }) => {
   return (
     <Container>
       {activities.map(activity => (
@@ -67,6 +68,12 @@ Timeline.propTypes = {
       statusColor: PropTypes.string,
     }),
   }).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-export default Timeline;
+const mapStateToProps = state => ({
+  activities: state.activity.data,
+  loading: state.activity.loading,
+});
+
+export default connect(mapStateToProps)(Timeline);
