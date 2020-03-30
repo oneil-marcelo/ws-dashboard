@@ -8,7 +8,7 @@ const Sales = () => {
   return (
     <Container>
       <Title>Vendas</Title>
-      <Message>Adicionar um gráfico aqui</Message>
+      <Message>Você não possui gráfico disponível.</Message>
     </Container>
   );
 };

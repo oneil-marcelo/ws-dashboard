@@ -1,11 +1,23 @@
 import React from 'react';
-import { MdSearch } from 'react-icons/md';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import {
+  MdSearch,
+  MdPerson,
+  MdAssignmentLate,
+  MdPlace,
+  MdPeople,
+  MdPhone,
+  MdMail,
+  MdStorage,
+  MdAddAPhoto,
+} from 'react-icons/md';
 
 import { MenuList, MenuItem, MenuLink } from './styles';
 
-const Menu = () => {
+const Menu = ({ menu }) => {
   return (
-    <MenuList>
+    <MenuList config={menu}>
       <MenuItem>
         <MenuLink to="/pagina" alt="nome da página">
           <MdSearch size={25} />
@@ -13,26 +25,59 @@ const Menu = () => {
       </MenuItem>
       <MenuItem>
         <MenuLink>
-          <MdSearch size={25} />
+          <MdPerson size={25} />
         </MenuLink>
       </MenuItem>
       <MenuItem>
         <MenuLink>
-          <MdSearch size={25} />
+          <MdAssignmentLate size={25} />
         </MenuLink>
       </MenuItem>
       <MenuItem>
         <MenuLink>
-          <MdSearch size={25} />
+          <MdPhone size={25} />
         </MenuLink>
       </MenuItem>
       <MenuItem>
         <MenuLink>
-          <MdSearch size={25} />
+          <MdPlace size={25} />
+        </MenuLink>
+      </MenuItem>
+      <MenuItem>
+        <MenuLink>
+          <MdPeople size={25} />
+        </MenuLink>
+      </MenuItem>
+      <MenuItem>
+        <MenuLink>
+          <MdMail size={25} />
+        </MenuLink>
+      </MenuItem>
+      <MenuItem>
+        <MenuLink>
+          <MdStorage size={25} />
+        </MenuLink>
+      </MenuItem>
+      <MenuItem>
+        <MenuLink>
+          <MdAddAPhoto size={25} />
         </MenuLink>
       </MenuItem>
     </MenuList>
   );
 };
 
-export default Menu;
+Menu.propTypes = {
+  menu: PropTypes.shape({
+    isOpen: PropTypes.bool,
+    width: PropTypes.string,
+    height: PropTypes.string,
+    padding: PropTypes.string,
+  }).isRequired,
+};
+
+const mapStateToProps = state => ({
+  menu: state.menu,
+});
+
+export default connect(mapStateToProps)(Menu);
